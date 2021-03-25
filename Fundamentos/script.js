@@ -43,17 +43,28 @@ const numeros = [1,2,3];
 
 // <-----------------Objetos Literales---------------->
 
-let nombre = "Perris",
-    edad = 10;
+// let nombre = "Perris",
+//     edad = 10;
 
-const dog = {
-    nombre,
-    edad,
-    raza: 'Callejero',
-    ladrar(){
-        console.log('WAu WAU')
-    }
-}
+// const dog = {
+//     nombre,
+//     edad,
+//     raza: 'Callejero',
+//     ladrar(){
+//         console.log('WAu WAU')
+//     }
+// }
 
-console.log(dog)
-dog.ladrar()
+// console.log(dog)
+// dog.ladrar()
+
+// <----------------------Arrow Functions -------------------->
+// funcion exprsada 
+const saludo = (nombre) => console.log(`Hola ${nombre}`);
+saludo('jhona');
+
+const sumar = (a,b) => a + b;
+
+console.log(sumar(1,2));
+// metodos en un objeto literal no crear arrow fuction por el metodo
+// this
