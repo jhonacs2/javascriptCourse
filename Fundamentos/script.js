@@ -21,23 +21,39 @@
 
 const numeros = [1,2,3];
 
-// sin destructuracion
-let uno = numeros[0],
-    dos = numeros[1],
-    tres= numeros[2];
+// // sin destructuracion
+// let uno = numeros[0],
+//     dos = numeros[1],
+//     tres= numeros[2];
 
-    console.log(uno,dos,tres)
+//     console.log(uno,dos,tres)
 
-//con destructuracion
-const [one,two,three] = numeros;
-console.log(one,two,three);
+// //con destructuracion
+// const [one,two,three] = numeros;
+// console.log(one,two,three);
 
-const persona = {
-    nombre:"jhona",
-    apellido:"Soto",
-    edad:35
+// const persona = {
+//     nombre:"jhona",
+//     apellido:"Soto",
+//     edad:35
+// }
+
+// let {nombre,apellido,edad} = persona;
+// console.log(nombre,apellido,edad)
+
+// <-----------------Objetos Literales---------------->
+
+let nombre = "Perris",
+    edad = 10;
+
+const dog = {
+    nombre,
+    edad,
+    raza: 'Callejero',
+    ladrar(){
+        console.log('WAu WAU')
+    }
 }
 
-let {nombre,apellido,edad} = persona;
-console.log(nombre,apellido,edad)
-
+console.log(dog)
+dog.ladrar()
