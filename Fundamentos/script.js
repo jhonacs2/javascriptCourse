@@ -123,7 +123,7 @@ function Animal (nombre, genero){
     this.nombre = nombre;
     this.genero = genero;
 }
-//metodos agregados al prototipo de la funcion constructura
+// metodos agregados al prototipo de la funcion constructura
 
 Animal.prototype.sonar = function(){
     console.log('Hago sonidos por que estoy vivo');
@@ -133,11 +133,33 @@ Animal.prototype.saludar = function(){
     console.log(`Hola me llamo ${this.nombre}`)
 }
 
-const snoopy = new Animal('snoopy','machin'),
+// ------------------------------- herencia prototipica --------------------------
+function Perro(nombre,genero,tamanio){
+    this.super = Animal;
+    this.super(nombre,genero);
+    this.tamanio = tamanio;
+}
+//Perro esta heredando de animal
+Perro.prototype = new Animal();
+//jala todas las carectetiticas de su prototipo padre
+Perro.prototype.constructor = Perro;
+//sobrescritura de metodos de metodos del prototipo padre en el hijo
+Perro.prototype.sonar = function(){
+    console.log(`Soy un perro y mi sonido es un ladrido`);
+}
+Perro.prototype.ladrar = function (){
+    console.log("WAu WAU")
+}
+
+const snoopy = new Perro('snoopy','machin','mediano'),
       lolaBunny = new Animal('lolas','femenino')
 
 console.log(snoopy)
 console.log(lolaBunny)
 
+snoopy.sonar();
 snoopy.saludar();
-snoopy.saludar();
+snoopy.ladrar();
+
+lolaBunny.sonar();
+lolaBunny.saludar();
