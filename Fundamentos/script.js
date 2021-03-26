@@ -59,12 +59,85 @@ const numeros = [1,2,3];
 // dog.ladrar()
 
 // <----------------------Arrow Functions -------------------->
-// funcion exprsada 
-const saludo = (nombre) => console.log(`Hola ${nombre}`);
-saludo('jhona');
+// // funcion exprsada 
+// const saludo = (nombre) => console.log(`Hola ${nombre}`);
+// saludo('jhona');
 
-const sumar = (a,b) => a + b;
+// const sumar = (a,b) => a + b;
 
-console.log(sumar(1,2));
-// metodos en un objeto literal no crear arrow fuction por el metodo
-// this
+// console.log(sumar(1,2));
+// // metodos en un objeto literal no crear arrow fuction por el metodo
+// // this
+
+
+// Poo
+// <---------------------------- Prototipos ------------------>
+/* clases - modelo a seguir
+    Objetos - es una instancia de una clase
+        atributos.- es una caracteristica o propiedad
+        objeto(son variables dentro de un objeto)
+        metodos: son las acciones que un objeto puede realiar
+        (son funciones dentro de un objeto)
+*/ 
+
+// const animal = {
+//     nombre:"Cachito",
+//     sonar(){
+//         console.log('Hago sonidos por que estoy vivo');
+//     }
+// }
+
+// const animal2 = {
+//     nombre:"Cacucho",
+//     sonar(){
+//         console.log('Hago sonidos por que estoy vivo');
+//     }
+// }
+
+
+// console.log(animal)
+// console.log(animal2)
+
+
+// funcion constructura
+
+/*
+    Version 1.0
+function Animal (nombre, genero){
+    // atributos
+    this.nombre = nombre;
+    this.genero = genero;
+    //metodos
+    this.sonar = function(){
+        console.log('Hago sonidos por que estoy vivo');
+    }
+
+    this.saludar = function(){
+        console.log(`Hola me llamo ${this.nombre}`)
+    }
+}
+*/
+//Funcion contrstuctura donde asignamos los metodos al prototipo
+function Animal (nombre, genero){
+    // atributos
+    this.nombre = nombre;
+    this.genero = genero;
+}
+//metodos agregados al prototipo de la funcion constructura
+
+Animal.prototype.sonar = function(){
+    console.log('Hago sonidos por que estoy vivo');
+}
+
+Animal.prototype.saludar = function(){
+    console.log(`Hola me llamo ${this.nombre}`)
+}
+
+const snoopy = new Animal('snoopy','machin'),
+      lolaBunny = new Animal('lolas','femenino')
+
+console.log(snoopy)
+console.log(lolaBunny)
+
+snoopy.saludar();
+snoopy.saludar();
